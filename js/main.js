@@ -7,6 +7,7 @@ const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
 const lockStatus = document.getElementById('lock-status');
 const unlockButton = document.getElementById('unlock');
+const batteryButton = document.getElementById('battery');
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -36,6 +37,9 @@ const terminal = new BluetoothTerminal();
 // Override `receive` method to log incoming data to the terminal.
 terminal.receive = function(data) {
   // logToTerminal(data, 'in');
+  if (dataendsWith("%")) {
+    document.getElementById('batteryPercent').textContent = data;
+  }
 
 };
 
@@ -74,18 +78,22 @@ unlockButton.addEventListener('click', () => {
   send('u');
 });
 
-sendForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  send('u');
-  // setTimeout(() => send('u'), 700);
-  // setTimeout(() => send('u'), 700);
-  // setTimeout(() => send('u'), 700);
-  // setTimeout(() => send('u'), 500);
-
-  inputField.value = '';
-  inputField.focus();
+unlockButton.addEventListener('click', () => {
+  send('b');
 });
+
+// sendForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+
+//   send('u');
+//   // setTimeout(() => send('u'), 700);
+//   // setTimeout(() => send('u'), 700);
+//   // setTimeout(() => send('u'), 700);
+//   // setTimeout(() => send('u'), 500);
+
+//   inputField.value = '';
+//   inputField.focus();
+// });
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
 terminalContainer.addEventListener('scroll', () => {

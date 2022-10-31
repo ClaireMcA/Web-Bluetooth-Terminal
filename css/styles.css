@@ -7,15 +7,63 @@ html, body, .app {
   min-height: 100%; }
 
 body {
-  background: #ffffff;
+  background-color: #EAAA4A;
   color: rgba(0, 0, 0, 0.87);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Kodchasan', sans-serif;
   font-size: 16px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+}
+
 
 .app {
-  display: flex;
-  flex-direction: column; }
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas: 
+    "tb tb tb tb tb tb tb tb tb tb tb tb"
+    ". is is is is is is is is is is ."
+    "ft ft ft ft ft ft ft ft ft ft ft ft";
+}
+
+.footer {
+  grid-area: ft;
+  justify-self: center;
+  align-self: end;
+  padding: 40px;
+}
+
+.interface {
+  grid-area: is;
+  justify-self: center;
+  width: 100%;
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "b1" 
+    "b2 "
+    "b3 "
+    "b4";
+}
+
+.unlock {
+  grid-area: b1;
+}
+
+.battery {
+  grid-area: b2;
+}
+
+.connect {
+  grid-area: b3;
+}
+
+.disconnect {
+  grid-area: b4;
+}
+
 
 button {
   background: none;
@@ -34,23 +82,31 @@ button {
 
 .toolbar {
   align-items: center;
-  display: flex;
-  flex-shrink: 0; }
-  .toolbar .name {
+  justify-self: right;
+  grid-area: tb;
+  /* display: flex;
+  flex-shrink: 0;  */
+}
+  /* .toolbar .name {
     flex-grow: 1;
     padding: 0 8px;
     user-select: none; }
   .toolbar .buttons {
     flex-shrink: 0; }
     .toolbar .buttons button {
-      float: left; }
+      float: right; } */
+
+.toolbar h2 {
+  padding: 0px 12px;
+}
 
 .terminal {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-width: 1px 0;
   flex-grow: 1;
   overflow: auto;
-  padding: 4px 0; }
+  padding: 4px 0;
+  display: none; }
   .terminal div {
     color: #9E9E9E;
     line-height: 1;
@@ -61,7 +117,8 @@ button {
     .terminal div.in {
       color: #2196F3; }
 
-.send-form {
+
+/* .send-form {
   display: flex;
   flex-shrink: 0; }
   .send-form input {
@@ -74,4 +131,35 @@ button {
     .send-form input::placeholder {
       color: rgba(0, 0, 0, 0.54); }
   .send-form button {
-    flex-shrink: 0; }
+    flex-shrink: 0; } */
+
+
+
+
+@media screen and (min-width: 800px) {
+
+  .interface {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "b1 b2 "
+      "b3 b4";
+  }
+
+  button {
+    font-size: 2rem;
+  }
+
+  .material-icons {
+    font-size: 4.7rem;
+  }
+
+  .toolbar {
+    justify-self: left;
+  }
+
+  .toolbar h2 {
+    padding: 0px 40px;
+    font-size: 3rem;
+  }
+
+}

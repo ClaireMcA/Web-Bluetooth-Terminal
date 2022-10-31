@@ -11,21 +11,14 @@ html, body, .app {
 }
 
 body {
-  background: $background-color;
+  background: $orange;
   color: $text-color;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Kodchasan', sans-serif;
   font-size: 16px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.app {
-  display: grid;
-  grid-template-columns: 50px 50px 50px 50px;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "tb tb tb tb tb tb tb tb tb tb tb tb tb tb tb tb"
-    "is is is is is is is is is is is is is is is is"
-    "ct ct ct ct ct ct ct ct ct ct ct ct ct ct ct ct"
-    "ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft";
-}
+
+
+

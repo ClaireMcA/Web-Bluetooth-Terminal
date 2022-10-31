@@ -15,6 +15,10 @@
 
     <title>Web Bluetooth Terminal</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;700&display=swap" rel="stylesheet">
+
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
@@ -49,37 +53,39 @@
                 <button id="disconnect" type="button" aria-label="Disconnect">
                     <i class="material-icons">bluetooth_disabled</i>
                 </button> -->
-
-                <button id="menu" type="button" aria-label="menu">
+                <h2>Claire's FABL</h2>
+                <!-- <button id="menu" type="button" aria-label="Menu">
                     <i class="material-icons">menu_rounded</i>
-                </button>
+                    <i class="material-icons">menu_rounded</i>
+                </button> -->
             <!-- </div> -->
 
         </div>
 
-        <div class="hide">
-            <div id="terminal" class="terminal"></div>
-        </div>
 
-        <div id="Status-Interface">
-            <h2>Claire's FABL</h2>
-            <button id='unlock'type="button" aria-label="Unlock">
+        <div id="Status-Interface" class="interface">
+            
+            <button id='unlock' type="button" aria-label="Unlock">
                 <i class="material-icons" id='lock-status'>lock_open</i>
-                Unlock
+                <p>Unlock</p>
             </button>
             <button id='battery' type="button" aria-label="Battery">
                 <i class="material-icons">battery_6_bar</i>
-                <p></p>
+                <p id="batteryPercent">Percentage</p>
             </button>
 
             <button id='connect' type="button" aria-label="Connect">
                 <i class="material-icons">link</i>
-                Connect to FABL
+                <p>Connect to FABL</p>
             </button>
             <button id='disconnect'type="button" aria-label="Disonnect">
-                <i class="material-icons">link</i>
-                Disconnect FABL
+                <i class="material-icons">link_off</i>
+                <p>Disconnect FABL</p>
             </button>
+        </div>
+
+        <div class="hid">
+            <div id="terminal" class="terminal"></div>
         </div>
         <!-- <p class="cta">
             <i class="material-icons" id='connect-status'>fingerprint</i>
@@ -87,7 +93,7 @@
         </p> -->
 
 
-        <div class="send-form" id="send-form">
+        <div class="footer" id="footer">
             The Fingerprint Activated Bike Lock
         </div>
         <!-- <form id="send-form" class="send-form">
