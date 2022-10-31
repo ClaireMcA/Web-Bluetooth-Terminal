@@ -23,7 +23,7 @@ const scrollElement = (element) => {
 
 const logToTerminal = (message, type = '') => {
   terminalContainer.insertAdjacentHTML('beforeend',
-      `<div${type && ` class="${type}"`}>${message}</div>`);
+      `<div${type && ` class="${type} hide"`}>${message}</div>`);
 
   if (isTerminalAutoScrolling) {
     scrollElement(terminalContainer);
@@ -35,7 +35,8 @@ const terminal = new BluetoothTerminal();
 
 // Override `receive` method to log incoming data to the terminal.
 terminal.receive = function(data) {
-  logToTerminal(data, 'in');
+  // logToTerminal(data, 'in');
+
 };
 
 // Override default log method to output messages to the terminal and console.
@@ -50,7 +51,7 @@ terminal._log = function(...messages) {
 // Implement own send function to log outcoming data to the terminal.
 const send = (data) => {
   terminal.send(data).
-      then(() => logToTerminal(data, 'out')).
+      // then(() => logToTerminal(data, 'out')).
       catch((error) => logToTerminal(error));
 };
 
@@ -77,9 +78,9 @@ sendForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   send('u');
-  setTimeout(() => send('u'), 700);
-  setTimeout(() => send('u'), 700);
-  setTimeout(() => send('u'), 700);
+  // setTimeout(() => send('u'), 700);
+  // setTimeout(() => send('u'), 700);
+  // setTimeout(() => send('u'), 700);
   // setTimeout(() => send('u'), 500);
 
   inputField.value = '';
@@ -96,12 +97,12 @@ terminalContainer.addEventListener('scroll', () => {
 
 
 
-// Mapbox 
-mapboxgl.accessToken = pk.eyJ1IjoibnVnbWM3IiwiYSI6ImNrdXFwMmE0bTR4bDgydW84MTczMzJ4bnQifQ.ELNGQu9bmwasNHuVUZT96w;
+// // Mapbox 
+// mapboxgl.accessToken = pk.eyJ1IjoibnVnbWM3IiwiYSI6ImNrdXFwMmE0bTR4bDgydW84MTczMzJ4bnQifQ.ELNGQu9bmwasNHuVUZT96w;
 
-let map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
-  center: [35.236220, 149.083006], // starting position [lng, lat]
-  zoom: 9 // starting zoom
- });
+// let map = new mapboxgl.Map({
+//   container: 'map', // container id
+//   style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+//   center: [35.236220, 149.083006], // starting position [lng, lat]
+//   zoom: 9 // starting zoom
+//  });

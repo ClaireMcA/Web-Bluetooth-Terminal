@@ -38,11 +38,11 @@
 
         <div class="toolbar">
 
-            <!-- <div id="device-name" class="name">FABL</div> -->
+            <!-- <div id="device-name" class="name">Terminal</div> -->
 
-            <!-- <div class="buttons"> -->
+            <!-- <div class="buttons">
 
-                <!-- <button id="connect" type="button" aria-label="Connect">
+                <button id="connect" type="button" aria-label="Connect">
                     <i class="material-icons">bluetooth_connected</i>
                 </button>
 
@@ -57,31 +57,34 @@
 
         </div>
 
-        <!-- <div id="terminal" class="terminal">
-        </div> -->
+        <div class="hide">
+            <div id="terminal" class="terminal"></div>
+        </div>
 
         <div id="Status-Interface">
             <h2>Claire's FABL</h2>
             <button id='unlock'type="button" aria-label="Unlock">
                 <i class="material-icons" id='lock-status'>lock_open</i>
+                Unlock
             </button>
-            <p id='battery-status'>
+            <button id='battery' type="button" aria-label="Battery">
                 <i class="material-icons">battery_6_bar</i>
-                100%
-            </p>
-            <button id='connect'type="button" aria-label="Connect">
-                <i class="material-icons">link_off</i>
-                Not Connected
+                <p></p>
+            </button>
+
+            <button id='connect' type="button" aria-label="Connect">
+                <i class="material-icons">link</i>
+                Connect to FABL
             </button>
             <button id='disconnect'type="button" aria-label="Disonnect">
                 <i class="material-icons">link</i>
-                Connected
+                Disconnect FABL
             </button>
         </div>
-        <p class="cta">
+        <!-- <p class="cta">
             <i class="material-icons" id='connect-status'>fingerprint</i>
-            Enrolled Fingerprints
-        </p>
+            Enroll Fingerprints
+        </p> -->
 
 
         <div class="send-form" id="send-form">

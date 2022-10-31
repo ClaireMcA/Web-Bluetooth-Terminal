@@ -2,14 +2,16 @@
   border: 1px solid $dividers-color;
   border-width: 1px 0;
   flex-grow: 1;
-  overflow: auto;
+  overflow:hidden;
   padding: 4px 0;
+  display: none;
 
   div {
     color: $terminal-default-color;
     line-height: 1;
     padding: 4px 8px;
     word-break: break-word;
+    display: none;
 
     &.out {
       color: $terminal-out-color;
@@ -20,3 +22,21 @@
     }
   }
 }
+
+// .hide .terminal  {
+//   display: none;
+//   padding: 0px 0px;
+//   visibility: hidden !important;
+// }
+
+// .hide .terminal div {
+//   display: none;
+//   padding: 0px 0px;
+//   visibility: hidden !important;
+// }
+
+// .hide  {
+//   display: none;
+//   padding: 0px 0px;
+//   visibility: hidden !important;
+// }
