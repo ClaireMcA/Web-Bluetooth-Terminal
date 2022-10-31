@@ -37,8 +37,13 @@ const terminal = new BluetoothTerminal();
 // Override `receive` method to log incoming data to the terminal.
 terminal.receive = function(data) {
   // logToTerminal(data, 'in');
-  if (dataendsWith("%")) {
-    document.getElementById('batteryPercent').textContent = data;
+  // document.getElementById('batteryPercent').textContent = data;
+
+  if (data.endsWith("%")) {
+    document.getElementById('batteryPercent').textContent = 'Checking Battery'
+    setTimeout ( 
+      document.getElementById('batteryPercent').textContent = data, 1000
+    );
   }
 
 };
@@ -78,7 +83,7 @@ unlockButton.addEventListener('click', () => {
   send('u');
 });
 
-unlockButton.addEventListener('click', () => {
+batteryButton.addEventListener('click', () => {
   send('b');
 });
 
