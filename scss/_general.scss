@@ -20,6 +20,12 @@ body {
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "tb tb tb tb tb tb tb tb tb tb tb tb tb tb tb tb"
+    "is is is is is is is is is is is is is is is is"
+    "ct ct ct ct ct ct ct ct ct ct ct ct ct ct ct ct"
+    "ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft";
 }

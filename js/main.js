@@ -5,6 +5,8 @@ const disconnectButton = document.getElementById('disconnect');
 const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
+const lockStatus = document.getElementById('lock-status');
+const unlockButton = document.getElementById('unlock');
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -66,10 +68,19 @@ disconnectButton.addEventListener('click', () => {
   deviceNameLabel.textContent = defaultDeviceName;
 });
 
+unlockButton.addEventListener('click', () => {
+
+  send('u');
+});
+
 sendForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  send(inputField.value);
+  send('u');
+  setTimeout(() => send('u'), 700);
+  setTimeout(() => send('u'), 700);
+  setTimeout(() => send('u'), 700);
+  // setTimeout(() => send('u'), 500);
 
   inputField.value = '';
   inputField.focus();
@@ -82,3 +93,15 @@ terminalContainer.addEventListener('scroll', () => {
 
   isTerminalAutoScrolling = (scrollTopOffset < terminalContainer.scrollTop);
 });
+
+
+
+// Mapbox 
+mapboxgl.accessToken = pk.eyJ1IjoibnVnbWM3IiwiYSI6ImNrdXFwMmE0bTR4bDgydW84MTczMzJ4bnQifQ.ELNGQu9bmwasNHuVUZT96w;
+
+let map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+  center: [35.236220, 149.083006], // starting position [lng, lat]
+  zoom: 9 // starting zoom
+ });

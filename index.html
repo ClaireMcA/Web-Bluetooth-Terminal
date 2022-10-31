@@ -27,6 +27,10 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <!-- Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -34,25 +38,56 @@
 
         <div class="toolbar">
 
-            <div id="device-name" class="name">Terminal</div>
+            <!-- <div id="device-name" class="name">FABL</div> -->
 
-            <div class="buttons">
+            <!-- <div class="buttons"> -->
 
-                <button id="connect" type="button" aria-label="Connect">
+                <!-- <button id="connect" type="button" aria-label="Connect">
                     <i class="material-icons">bluetooth_connected</i>
                 </button>
 
                 <button id="disconnect" type="button" aria-label="Disconnect">
                     <i class="material-icons">bluetooth_disabled</i>
-                </button>
+                </button> -->
 
-            </div>
+                <button id="menu" type="button" aria-label="menu">
+                    <i class="material-icons">menu_rounded</i>
+                </button>
+            <!-- </div> -->
 
         </div>
 
-        <div id="terminal" class="terminal"></div>
+        <!-- <div id="terminal" class="terminal">
+        </div> -->
 
-        <form id="send-form" class="send-form">
+        <div id="Status-Interface">
+            <h2>Claire's FABL</h2>
+            <button id='unlock'type="button" aria-label="Unlock">
+                <i class="material-icons" id='lock-status'>lock_open</i>
+            </button>
+            <p id='battery-status'>
+                <i class="material-icons">battery_6_bar</i>
+                100%
+            </p>
+            <button id='connect'type="button" aria-label="Connect">
+                <i class="material-icons">link_off</i>
+                Not Connected
+            </button>
+            <button id='disconnect'type="button" aria-label="Disonnect">
+                <i class="material-icons">link</i>
+                Connected
+            </button>
+        </div>
+        <p class="cta">
+            <i class="material-icons" id='connect-status'>fingerprint</i>
+            Enrolled Fingerprints
+        </p>
+
+
+        <div class="send-form" id="send-form">
+            The Fingerprint Activated Bike Lock
+        </div>
+        <!-- <form id="send-form" class="send-form">
 
             <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="Type something to send...">
 
@@ -60,7 +95,7 @@
                 <i class="material-icons">send</i>
             </button>
 
-        </form>
+        </form> -->
 
     </div>
 
