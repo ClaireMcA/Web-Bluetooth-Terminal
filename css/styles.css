@@ -82,7 +82,7 @@ button {
 
 .toolbar {
   align-items: center;
-  justify-self: right;
+  justify-self: left;
   grid-area: tb;
   /* display: flex;
   flex-shrink: 0;  */
