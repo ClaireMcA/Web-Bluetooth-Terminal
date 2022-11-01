@@ -1,7 +1,7 @@
 {
-  "name": "web-bluetooth-terminal",
+  "name": "FABL-Webapp",
   "version": "1.3.3",
-  "description": "Progressive Web Application for serial communication with your own Bluetooth Low Energy (Smart) devices",
+  "description": "Progressive Web Application for serial communication with the FABL.",
   "bin": "./cli.js",
   "scripts": {
     "build": "npm run js:vendor && npm run styles:vendor && npm run styles",
